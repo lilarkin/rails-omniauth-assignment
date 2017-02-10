@@ -1,8 +1,17 @@
-<h1 class="center">Trips</h1>
+<h1 class="center orange darken-2 white-text">Trips</h1>
 
-<% @trips.each do |trip| %>
-  <%= trip.name %>
-  <%= link_to 'Show', trip_path(trip) %>
-<% end %>
-
-<% link_to 'New Trip', new_trip_path %>
+<div class=''> 
+  <% @trips.each do |trip| %>
+  <div class='col s12 m3'>
+    <%= trip.name %>
+    <br />
+    <div class='btn orange white-text'> 
+      <%= link_to 'Show', trip_path(trip) %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<br />
+<div class='btn orange white-text'>
+<%= link_to 'New Trip', new_trip_path %>
+</div>
