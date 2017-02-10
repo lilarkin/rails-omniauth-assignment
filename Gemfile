@@ -16,14 +16,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem 'faker'
-gem 'flash'
+#gem 'flash'
 gem 'font-awesome-rails'
-gem 'paperclip', '~> 5.0.0'
+#gem 'paperclip', '~> 5.0.0'
 
 
 group :development, :test do
   gem 'pry'
-  
+
 end
 
 group :development do

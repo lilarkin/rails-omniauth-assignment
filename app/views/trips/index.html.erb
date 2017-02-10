@@ -1,2 +1,8 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h1 class="center">Trips</h1>
+
+<% @trips.each do |trip| %>
+  <%= trip.name %>
+  <%= link_to 'Show', trip_path(trip) %>
+<% end %>
+
+<% link_to 'New Trip', new_trip_path %>
