@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170210174618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "adresses", force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string   "city"
     t.string   "state"
     t.string   "street"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20170210174618) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "destination"
+    t.string   "destination",   null: false
     t.string   "travel_method"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "trip_id"
+    t.index ["trip_id"], name: "index_locations_on_trip_id", using: :btree
   end
 
   create_table "trips", force: :cascade do |t|
