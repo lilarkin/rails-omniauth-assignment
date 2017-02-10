@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    @locations = @trip.locations.all
   end
 
   def new
