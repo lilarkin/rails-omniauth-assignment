@@ -5,8 +5,9 @@
 end
 
 puts "Trips seeded, there are now #{Trip.count} trips in the database."
+
 Trip.all.each do |trip|
-  
+
   3.times do
       Location.create(
                   destination: Faker::StarWars.planet,
@@ -15,4 +16,20 @@ Trip.all.each do |trip|
                   )
     end
   end
-      
+
+  puts "Locations seeded, there are now #{Location.count} locations in the database."
+
+  Location.all.each do |location|
+
+    3.times do
+        Address.create(
+                    city: Faker::Address.city,
+                    state: Faker::Address.state,
+                    street: Faker::Address.street_address,
+                    zip: Faker::Address.zip,
+                    location_id: location.id
+                    )
+      end
+    end
+
+  puts "Address seeded, there are now #{Address.count} addresses in the database."

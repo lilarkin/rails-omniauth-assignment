@@ -24,6 +24,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @travel_methods = Location.travel_methods
   end
 
   def update
