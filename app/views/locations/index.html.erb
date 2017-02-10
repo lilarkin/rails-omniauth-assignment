@@ -1,10 +1,16 @@
-<h1 class='center orange darken-2 white-text'>Trip Locations</h1>
+<h1 class='center orange darken-2 white-text'>Trips</h1>
 
 <% @locations.each do |location| %>
-    <h3><%= location.destination %></h3>
-    <!-- <h4><%= location.travel_method %></h4> -->
-    <%= link_to 'Show', trip_location_path(@trip, location) %>
-    <!-- <%= link_to 'Adresses', location_addresses_path(location) %> -->
+    <h4><%= location.destination %></h4>
+    
+    <h5><%= location.travel_method %></h5> 
+    <%= link_to 'Show', trip_location_path(@trip, location),
+        class: 'btn orange white-text' %>
+    <br /> <br />
+    <%= link_to 'Addresses', location_addresses_path(location),
+        class: 'btn orange white-text' %>
 <% end %>
-
-<%= link_to 'New Address', new_trip_location_path(@locations) %>
+<br />
+<br />
+<%= link_to 'New Trip Location', new_trip_location_path(@trip, @location),
+    class: 'btn orange white-text' %>

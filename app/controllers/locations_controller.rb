@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @travel_methods = Location.travel_methods
     @location = Location.new
   end
 
