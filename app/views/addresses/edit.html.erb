@@ -1,2 +1,6 @@
-<h1>Addresses#edit</h1>
-<p>Find me in app/views/addresses/edit.html.erb</p>
+<h1 class="center orange darken-2 white-text">Edit This Address</h1>
+
+<%= render(partial: 'form') %>
+<br />
+
+<%= link_to 'Back', location_addresses_path(@location), class: 'btn orange white-text' %>
