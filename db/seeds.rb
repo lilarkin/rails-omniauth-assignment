@@ -21,7 +21,7 @@ Trip.all.each do |trip|
 
   Location.all.each do |location|
 
-    3.times do
+    1.times do
         Address.create(
                     city: Faker::Address.city,
                     state: Faker::Address.state,

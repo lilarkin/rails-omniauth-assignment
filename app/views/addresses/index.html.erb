@@ -1,13 +1,10 @@
-<h1 class='center orange darken-2 white-text'>Addresses</h1>
+<h1 class='center orange darken-2 white-text'>Address</h1>
+    <h4><%= @address.street %></h4>
 
-<% @addresses.each do |address| %>
-    <h4><%= address.street %></h4>
+    <h4><%= @address.city %>, <%= @address.state %> <%= @address.zip %></h4>
 
-    <h4><%= address.city %>, <%= address.state %> <%= address.zip %></h4>
-
-    <%= link_to 'Show', location_address_path(@location, address),
+    <%= link_to 'Show', location_address_path(@location, @address),
         class: 'btn orange white-text' %>
-<% end %>
 
 <br />
 <br />

@@ -1,4 +1,4 @@
-<h1 class='center orange darken-2 white-text'>Trips</h1>
+<h1 class='center orange darken-2 white-text'>Trip Locations</h1>
 
 <% @locations.each do |location| %>
     <h4><%= location.destination %></h4>
@@ -6,8 +6,8 @@
     <h5><%= location.travel_method %></h5>
     <%= link_to 'Show', trip_location_path(@trip, location),
         class: 'btn orange white-text' %>
-    <br /> <br />
-    <%= link_to 'Addresses', location_addresses_path(location),
+
+    <%= link_to 'Address', location_addresses_path(location),
         class: 'btn orange white-text' %>
 <% end %>
 <br />
