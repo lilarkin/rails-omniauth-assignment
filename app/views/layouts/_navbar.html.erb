@@ -1,0 +1,18 @@
+<nav class='orange darken-2'>
+  <div class='nav-wrapper'>
+    <a href="#!" class="brand-logo"></a>
+    <a href="#" data-activates="mobile" class="button-collapse">
+      <i class="fa fa-bars"></i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to 'Trip', trips_path %></li>
+      <!-- <li><%= link_to 'Locations', trip_locations_path(@trip) %></li> -->
+      <!-- <li><%= link_to 'Address', location_addresses_path(@location) %></li> -->
+    </ul>
+    <ul class="side-nav" id="mobile">
+      <li><%= link_to 'Trip', trips_path %></li>
+      <!-- <li><%= link_to 'Locations', trip_locations_path(@trip) %></li> -->
+      <!-- <li><%= link_to 'Address', location_addresses_path(@location) %></li> -->
+    </ul>
+  </div>
+</nav>
