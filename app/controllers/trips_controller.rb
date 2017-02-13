@@ -2,14 +2,17 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
+    @title = 'Trips'
     @trips = Trip.all
   end
 
   def show
+    @title = @trip.name
     @locations = @trip.locations.all
   end
 
   def new
+    @title = 'Add New Trip'
     @trip = Trip.new
   end
 
@@ -23,6 +26,7 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @title = 'Edit This Trip'
   end
 
   def update

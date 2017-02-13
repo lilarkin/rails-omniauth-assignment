@@ -3,13 +3,16 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
+    @title = 'Trip Locations'
     @locations = @trip.locations
   end
 
   def show
+    @title = @location.destination
   end
 
   def new
+    @title = 'Add New Location'
     @travel_methods = Location.travel_methods
     @location = Location.new
   end
@@ -24,6 +27,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @title = 'Edit This Location'
     @travel_methods = Location.travel_methods
   end
 
