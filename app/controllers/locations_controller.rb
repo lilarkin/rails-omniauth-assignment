@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   def index
     @title = 'Trip Locations'
     @locations = @trip.locations
+    flash[:info] = 'Welcome To The Trip Locations'
   end
 
   def show
@@ -20,8 +21,10 @@ class LocationsController < ApplicationController
   def create
     @location = @trip.locations.new(location_params)
       if @location.save
+        flash[:success] = 'New Location Created!'
         redirect_to trip_location_path(@trip, @location)
       else
+        flash[:error] = 'Please Try Again'
         render :new
       end
   end
@@ -33,8 +36,10 @@ class LocationsController < ApplicationController
 
   def update
     if @location.update(location_params)
+      flash[:success] = 'Location Updated'
       redirect_to trip_location_path(@trip, @location)
     else
+      flash[:error] = 'Please Try Again'
       render :edit
     end
   end

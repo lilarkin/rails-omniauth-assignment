@@ -5,6 +5,7 @@ class AddressesController < ApplicationController
   def index
     @title = 'Address'
     @address = @location.addresses.first
+    flash[:info] = 'Welcome To The Location Address'
   end
 
   def show
@@ -31,8 +32,10 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
+      flash[:success] = 'Address Updated'
       redirect_to location_address_path(@location, @address)
     else
+      flash[:error] = 'Please Try Again'
       render :edit
     end
   end
