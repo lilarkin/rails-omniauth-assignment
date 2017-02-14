@@ -20,7 +20,7 @@ class TripsController < ApplicationController
   def create
     @trip = current_user.trips.new(trip_params)
     if @trip.save
-      flash[:success] = 'New Trip Created!'
+      flash[:success] = 'New Trip Created'
       redirect_to trip_path(@trip)
     else
       flash[:error] = 'Please Try Again'

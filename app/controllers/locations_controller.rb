@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
   def create
     @location = @trip.locations.new(location_params)
       if @location.save
-        flash[:success] = 'New Location Created!'
+        flash[:success] = 'New Location Created'
         redirect_to trip_location_path(@trip, @location)
       else
         flash[:error] = 'Please Try Again'
@@ -54,12 +54,11 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:destination, :travel_method, :trip_id)
     end
 
-  def set_trip
-    @trip = Trip.find(params[:trip_id])
-  end
+    def set_trip
+      @trip = Trip.find(params[:trip_id])
+    end
 
-  def set_location
-    @location = @trip.locations.find(params[:id])
-  end
-
+    def set_location
+      @location = @trip.locations.find(params[:id])
+    end
 end

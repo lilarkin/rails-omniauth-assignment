@@ -50,12 +50,11 @@ class AddressesController < ApplicationController
       params.require(:address).permit(:city, :state, :street, :zip, :location_id)
     end
 
-  def set_location
-    @location = Location.find(params[:location_id])
-  end
+    def set_location
+     @location = Location.find(params[:location_id])
+    end
 
-  def set_address
-    @address = @location.addresses.find(params[:id])
-  end
-
+    def set_address
+      @address = @location.addresses.find(params[:id])
+    end
 end
