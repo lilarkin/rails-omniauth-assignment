@@ -12,19 +12,19 @@ class AddressesController < ApplicationController
     @title = 'Address'
   end
 
-  # def new
-  #   @title = 'Add New Address'
-  #   @address = Address.new
-  # end
+  def new
+    @title = 'Add New Address'
+    @address = Address.new
+  end
 
-  # def create
-  #   @address = @location.addresses.new(address_params)
-  #     if @address.save
-  #       redirect_to location_address_path(@location, @address)
-  #     else
-  #       render :new
-  #     end
-  # end
+  def create
+    @address = @location.addresses.new(address_params)
+      if @address.save
+        redirect_to location_address_path(@location, @address)
+      else
+        render :new
+      end
+  end
 
   def edit
     @title = 'Edit This Address'

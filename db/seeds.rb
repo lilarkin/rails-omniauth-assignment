@@ -1,6 +1,14 @@
+User.create(
+  first_name: 'Bob',
+  last_name: 'Smith',
+  email: 'bob@test.com',
+  password: 'password'
+)
+
 4.times do
   Trip.create(
-            name: "#{Faker::HarryPotter.location} Trip"
+            name: "#{Faker::HarryPotter.location} Trip",
+            user_id: User.first.id
             )
 end
 

@@ -3,22 +3,22 @@ class TripsController < ApplicationController
 
   def index
     @title = 'Trips'
-    @trips = Trip.all
+    @trips = current_user.trips
     flash[:info] = 'Welcome To The Trip Tracker'
   end
 
   def show
-    @title = @trip.name
+    @title = current_user.trips.name
     @locations = @trip.locations.all
   end
 
   def new
     @title = 'Add New Trip'
-    @trip = Trip.new
+    @trip = current_user.trips.new
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = current_user.trips.new(trip_params)
     if @trip.save
       flash[:success] = 'New Trip Created!'
       redirect_to trip_path(@trip)

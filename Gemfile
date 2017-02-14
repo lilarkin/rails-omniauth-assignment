@@ -17,6 +17,7 @@ gem 'materialize-sass'
 gem 'faker'
 # gem 'flash'
 gem 'font-awesome-rails'
+gem 'devise', '~> 4.2.0'
 
 group :development, :test do
   gem 'pry'
