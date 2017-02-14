@@ -1,6 +1,6 @@
 $(document).ready( function() {
 
-    // $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
   $('.flash').click( function(){
     $(this).slideToggle();
   });
