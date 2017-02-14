@@ -20,8 +20,10 @@ class AddressesController < ApplicationController
   def create
     @address = @location.addresses.new(address_params)
       if @address.save
+        flash[:success] = 'Address Created'
         redirect_to location_address_path(@location, @address)
       else
+        flash[:error] = 'Please Try Again'
         render :new
       end
   end

@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
 
   def new
     @title = 'Add New Location'
-    @travel_methods = Location.travel_methods
+    @travel_methods =   Location.travel_methods
     @location = Location.new
   end
 
@@ -25,6 +25,7 @@ class LocationsController < ApplicationController
         redirect_to trip_location_path(@trip, @location)
       else
         flash[:error] = 'Please Try Again'
+        @travel_methods = Location.travel_methods
         render :new
       end
   end
@@ -40,6 +41,7 @@ class LocationsController < ApplicationController
       redirect_to trip_location_path(@trip, @location)
     else
       flash[:error] = 'Please Try Again'
+      @travel_methods = Location.travel_methods
       render :edit
     end
   end
