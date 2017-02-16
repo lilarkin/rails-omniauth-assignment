@@ -1,15 +1,17 @@
-<% @locations.each do |location| %>
-  <h4><%= location.destination %></h4>
+<div class='field margin'>
+  <% @locations.each do |location| %>
+    <div class='card'>
+      <h4><%= location.destination %></h4>
 
-  <h5><%= location.travel_method %></h5>
+      <h5><%= location.travel_method %></h5>
 
-  <%= link_to 'Show', trip_location_path(@trip, location), class: 'btn orange white-text' %>
+      <%= link_to 'Show', trip_location_path(@trip, location), class: 'btn orange white-text' %>
 
-  <%= link_to 'Address', location_addresses_path(location), class: 'btn orange white-text' %>
-<% end %>
+      <%= link_to 'Address', location_addresses_path(location), class: 'btn orange white-text' %>
+    </div>
+  <% end %>
+</div>
 
-<br />
-<br />
-<%= link_to 'New Trip Location', new_trip_location_path(@trip, @location), class: 'btn orange white-text' %>
+<%= link_to 'New Trip Location', new_trip_location_path(@trip, @location), class: 'btn orange white-text margin' %>
 
-<%= link_to 'Home', trips_path, class: 'btn orange white-text' %>
+<%= link_to 'Back', :back, class: 'btn orange white-text margin' %>

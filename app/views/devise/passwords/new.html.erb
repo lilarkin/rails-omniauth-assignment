@@ -4,12 +4,14 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class='card'>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", class: 'btn orange white-text margin' %>
   </div>
 <% end %>
 

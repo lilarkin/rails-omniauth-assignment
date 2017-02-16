@@ -12,11 +12,11 @@
 }
 
 .flash.error {
- background-color: red;
+ background-color: lightcoral;
 }
 
 .flash.success {
- background-color: green;
+ background-color: lightgreen;
  color: white;
 }
 
@@ -25,11 +25,39 @@ body {
   background-size: cover;
 }
 
-.field {
-  background-color: rgba(255,255,255, 0.5);
-  color: black;
+.btn {
+  margin-bottom: 10px;
 }
 
 label {
   color: black !important;
+}
+
+.pagination {
+  font-size: 15px;
+  background-color: #ef6c00;
+  width: 50%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  display: inline-block;
+}
+
+.links a {
+  color: black;
+}
+
+.field {
+  background-color: rgba(255,255,255, 0.5);
+  color: black;
+  padding: 20px 0 20px 0;
+}
+
+.card {
+  width: 80%;
+  display: inline-block;
+}
+
+.margin {
+  margin-top: 10px;
 }

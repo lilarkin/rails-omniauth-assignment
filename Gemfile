@@ -15,13 +15,15 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem 'faker'
-# gem 'flash'
 gem 'font-awesome-rails'
 gem 'devise', '~> 4.2.0'
+gem 'will_paginate', '~> 3.1.0'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry'
-
+  gem 'populator'
+  gem 'dotenv-rails'
 end
 
 group :development do
