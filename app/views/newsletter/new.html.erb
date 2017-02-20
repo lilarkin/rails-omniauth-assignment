@@ -1,0 +1,24 @@
+<!-- NOTE: we are using form_tag instead of form_for because this form is not linked to a model! -->
+
+<%= form_tag newsletter_index_path do %>
+  <div class='field margin'>
+    <div class='card'>
+      <%= label_tag "Subject" %>
+      <%= text_area_tag "subject", nil, placeholder: 'Subject', cols: '20', rows: '5', required: true %>
+    </div>
+
+    <div class='card'>
+        <%= label_tag "Emails (*comma separated)" %>
+        <%= text_area_tag "emails", nil, placeholder: 'test@test.com, contact@dpl.com', required: true, cols: '20', rows: '5' %>
+    </div class='card'>
+
+    <div class='card'>
+      <%= label_tag "Newsletter Type" %>
+        <%= select_tag "newsletter", options_for_select(['weekly', 'monthly', 'yearly']) %>
+    </div>
+  </div>
+      <% if current_user.admin %>
+        <%= submit_tag 'Send', class: 'btn orange white-text margin' %>
+      <% end %>
+    
+<% end %>

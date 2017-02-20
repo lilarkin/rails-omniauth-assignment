@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   has_many :trips
 
+  after_create :action_mailer
+
+  # validates_presence_of :admin, default: false
+
   def display_name
     "#{first_name} #{last_name}"
   end
@@ -16,5 +20,9 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
     end
+  end
+
+  def action_mailer
+    SignupMailer.new_signup(self).deliver
   end
 end
