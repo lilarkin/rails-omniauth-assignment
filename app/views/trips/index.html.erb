@@ -2,15 +2,14 @@
   <% @trips.each do |trip| %>
     <div class='col s12 m3 card'>
       <h5><%= trip.name %></h5>
-      <br />
-      <%= link_to 'Show', trip_path(trip), class: 'btn orange white-text' %>
-      <%= link_to 'Locations', trip_locations_path(trip), class: 'btn orange white-text' %>
+      <%= link_to 'Show', trip_path(trip), class: 'btn orange white-text margin' %>
+      <%= link_to 'Locations', trip_locations_path(trip), class: 'btn orange white-text margin' %>
     </div>
   <% end %>
 </div>
 
 <%= link_to 'New Trip', new_trip_path, class: 'btn orange white-text margin' %>
 
-<div class='white-text links'>
-  <%= will_paginate @trips %>
+<div class=''>
+  <%= will_paginate @trip %>
 </div>
