@@ -16,4 +16,6 @@ bundle exec rails db:create db:migrate db:seed
 
 bundle exec rails server
 
+( open localhost:3000 in your browser )
+
 And you're good to go!
