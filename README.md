@@ -7,9 +7,13 @@ Installing
 Run Commands:
 
 bundle install
+
 bundle exec rails db:create db:migrate db:seed
+
 ( seeding is optional )
+
 ( Start Server ):
+
 bundle exec rails server
 
 And you're good to go!
